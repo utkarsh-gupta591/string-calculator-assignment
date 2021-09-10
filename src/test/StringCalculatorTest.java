@@ -33,4 +33,10 @@ public class StringCalculatorTest {
 	{
 		Assert.assertEquals(6, stringCalculator.add("1, 5"));
 	}
+	
+	@Test
+	public void testAdd_n_Numbers()
+	{
+		Assert.assertEquals(6, stringCalculator.add("1, 2, 3"));
+	}
 }
