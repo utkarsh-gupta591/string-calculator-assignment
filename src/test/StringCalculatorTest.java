@@ -61,7 +61,7 @@ public class StringCalculatorTest {
 	{
 		try
 		{
-		Assert.assertEquals(5, stringCalculator.add("1, -4"));
+		Assert.assertEquals(5, stringCalculator.add("1, -4, -8, 2, -6"));
 		}catch(NegativeNumberException nne)
 		{
 			System.out.println(nne.getMessage());
