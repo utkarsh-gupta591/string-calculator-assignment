@@ -37,6 +37,6 @@ public class StringCalculatorTest {
 	@Test
 	public void testAdd_n_Numbers()
 	{
-		Assert.assertEquals(6, stringCalculator.add("1, 2, 3"));
+		Assert.assertEquals(40, stringCalculator.add("1, 2, 3, 8, 9, 2, 5, 10"));
 	}
 }
