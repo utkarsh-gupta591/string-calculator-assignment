@@ -3,7 +3,7 @@ package main;
 public class StringCalculator {
 
 	public int add(String numbers) {
-		String n[]=numbers.split(", ");
+		String n[]=numbers.split(", |\n");
 		int sum;
 		if(n[0].equals(""))
 		{

@@ -39,4 +39,11 @@ public class StringCalculatorTest {
 	{
 		Assert.assertEquals(40, stringCalculator.add("1, 2, 3, 8, 9, 2, 5, 10"));
 	}
+	
+	@Test
+	public void testAdd_2()
+	{
+		Assert.assertEquals(11, stringCalculator.add("1\n2, 3\n5"));
+		Assert.assertEquals(12, stringCalculator.add("1\n2\n3\n6"));
+	}
 }
