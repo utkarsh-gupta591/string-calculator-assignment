@@ -1,9 +1,9 @@
 package main.exception;
 
-public class NegativeNumberException extends Exception{
+public class NegativeNumberException extends RuntimeException{
 	
 	private String message;
-	NegativeNumberException(String message)
+	public NegativeNumberException(String message)
 	{
 		this.message=message;
 	}

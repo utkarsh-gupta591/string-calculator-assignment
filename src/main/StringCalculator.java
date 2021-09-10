@@ -1,8 +1,12 @@
 package main;
 
+import java.util.*;
+
+import main.exception.NegativeNumberException;
+
 public class StringCalculator {
 
-	public int add(String numbers) {
+	public int add(String numbers) throws RuntimeException{
 		int sum;
 		String n[];
 		if(numbers.startsWith("//"))
@@ -19,13 +23,25 @@ public class StringCalculator {
 				return sum;
 			}	
 		}
-		int i;
+		List<Integer> negativeNumbers=new ArrayList<Integer>();
+		int i, m;
+		int flag=0;
 		i=0;
 		sum=0;
 		while(i<n.length)
 		{
-			sum+=Integer.parseInt(n[i]);
+			m=Integer.parseInt(n[i]);
+			if(m<0)
+			{
+				flag=1;
+				negativeNumbers.add(m);
+			}
+			sum+=m;
 			i++;
+		}
+		if(flag==1)
+		{
+			throw new NegativeNumberException("negatives not allowed - "+negativeNumbers.toString());
 		}
 		return sum;
 	}
