@@ -3,12 +3,21 @@ package main;
 public class StringCalculator {
 
 	public int add(String numbers) {
-		String n[]=numbers.split(", |\n");
 		int sum;
-		if(n[0].equals(""))
+		String n[];
+		if(numbers.startsWith("//"))
 		{
-			sum=0;
-			return sum;
+			Character separator=numbers.charAt(2);
+			n=numbers.substring(4).split(separator.toString());
+		}
+		else
+		{
+			n=numbers.split(", |\n");
+			if(n[0].equals(""))
+			{
+				sum=0;
+				return sum;
+			}	
 		}
 		int i;
 		i=0;

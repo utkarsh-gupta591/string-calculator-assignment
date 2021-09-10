@@ -46,4 +46,12 @@ public class StringCalculatorTest {
 		Assert.assertEquals(11, stringCalculator.add("1\n2, 3\n5"));
 		Assert.assertEquals(12, stringCalculator.add("1\n2\n3\n6"));
 	}
+	
+	@Test
+	public void testAdd_3()
+	{
+		Assert.assertEquals(21, stringCalculator.add("//;\n1;2;5;6;7"));
+		Assert.assertEquals(21, stringCalculator.add("//:\n1:2:5:6:7"));
+		Assert.assertEquals(21, stringCalculator.add("//,\n1,2,5,6,7"));
+	}
 }
