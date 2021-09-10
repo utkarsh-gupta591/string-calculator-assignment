@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import main.StringCalculator;
+import main.exception.NegativeNumberException;
 
 public class StringCalculatorTest {
 
@@ -53,5 +54,17 @@ public class StringCalculatorTest {
 		Assert.assertEquals(21, stringCalculator.add("//;\n1;2;5;6;7"));
 		Assert.assertEquals(21, stringCalculator.add("//:\n1:2:5:6:7"));
 		Assert.assertEquals(21, stringCalculator.add("//,\n1,2,5,6,7"));
+	}
+	
+	@Test
+	public void testAddNegativeNumbers()
+	{
+		try
+		{
+		Assert.assertEquals(9, stringCalculator.add("1, 2, -6"));
+		}catch(NegativeNumberException nne)
+		{
+			System.out.println(nne.getMessage());
+		}
 	}
 }
